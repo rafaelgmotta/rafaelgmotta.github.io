@@ -3,24 +3,48 @@
   <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
-  <table border=1>
-    <tr><td>
-      <canvas id="canvas" width="300" height="300" style="border:1px solid #000000;">
-        An alternative text describing what your canvas displays.
-      </canvas><br>
-      <input type="button" id="play" value="Play">
+
+
+
+      <br>
+      <table border=1>
+        <tr>
+          <td colspan="2">
+            <div id="canvasesdiv" style="position:relative; width:400px; height:300px">
+            <canvas id="canvas" width="400" height="300"
+            style="z-index: 1; position:absolute; left:0px; top:0px; border:1px;">
+            </canvas>
+            <canvas id="canvas2" width="400" height="300"
+            style="z-index: 2; position:absolute; left:0px; top:0px; border:1px;">
+            </canvas>
+          </div>
+          </td>
+          <td rowspan="3" valign=top>
+            Sequência de comandos escolhidos<br>
+
+            <ul>
+            <div id="comandos"></div>
+            </ul>
+          </td>
+        </tr>
+        <tr><td>
+
+            <input type="button" id="play" value="Play" onclick=play()>
+            <input type="button" id="reset" value="Reset" onclick=reset()>
+            <input type="checkbox" id = "sempreDoComeco" name="sempreDoComeco"><label for="sempreDoComeco"> Sempre reset antes do Play</label>
+
     </td>
-    <td>
-      Sequência de comandos escolhidos
-    </td>
+
   </tr>
   <tr>
     <td colspan="2">
-      Lista de comandos<br>
-      <input type="button" id="esquerda" value="Ir para esquerda">
-      <input type="button" id="direita" value="Ir para direita">
-      <input type="button" id="cima" value="Ir para cima">
-      <input type="button" id="baixo" value="Ir para baixo">
+      Lista de comandos
+            <input type="button" id="apagarComandos" value="Apagar" onclick=apagarComandos()>
+      <br>
+      <input type="button" id="esquerda" value="Ir para esquerda" onclick=left()>
+      <input type="button" id="direita" value="Ir para direita" onclick=right()>
+      <input type="button" id="cima" value="Ir para cima" onclick=up()>
+      <input type="button" id="baixo" value="Ir para baixo" onclick=down()>
 
     </td>
   </tr>
